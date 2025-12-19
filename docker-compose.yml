@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # persisted DB file in /data
+      DATABASE_URL: "sqlite:////data/app.db"
+    volumes:
+      - uow_demo_data:/data
+
+volumes:
+  uow_demo_data:
